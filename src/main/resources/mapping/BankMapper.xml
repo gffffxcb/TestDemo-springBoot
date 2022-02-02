@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mgh.testdemospringboot.mapper.BankMapper">
+    <resultMap id="BaseResultMap" type="com.mgh.testdemospringboot.entity.Bank">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="money" jdbcType="DOUBLE" property="money"/>
+    </resultMap>
+    <insert id="insertOne" parameterType="com.mgh.testdemospringboot.entity.Bank">
+        INSERT INTO `learn_mysql`.`bank` ( `name`, `money`)
+        VALUES (#{name}, #{money});
+    </insert>
+    <delete id="deleteById" parameterType="integer">
+        DELETE FROM bank WHERE Id=#{id};
+    </delete>
+    <select id="findAllBank" resultMap="BaseResultMap" parameterType="integer">
+        select * from bank
+    </select>
+
+</mapper>
+
+

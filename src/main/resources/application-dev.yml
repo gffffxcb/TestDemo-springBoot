@@ -1,0 +1,12 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/learn_mysql
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      ßpassword: root
+mybatis:
+  type-aliases-package: com.mgh.testdemospringboot.entity
+  mapper-locations: classpath:mapping/*.xml
